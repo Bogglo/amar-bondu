@@ -96,7 +96,6 @@
     const relations = ["হিরা", "মিম", "মুন্নি", "নিলা", "জান্নাতি", "মিম", "তানিয়া", "লিমা", "আসিয়া"];
     const randomRelation = relations[Math.floor(Math.random() * relations.length)];
 
-    // friends অ্যারের স্ট্রিংগুলো, শুধু এখন প্রত্যেকটির শেষে অ্যাডের জন্য div যোগ করেছি id সহ
     const friends = [
 
       `<div class="container">
@@ -125,7 +124,7 @@
         <p><span class="label">ব্যবহার:</span> শিক্ষার প্রতি আগ্রহ নতুন কিছু শেখার জন্য সবসময় আগ্রহী এবং অন্যদেরও শেখার জন্য অনুপ্রাণিত করে</p>
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> শালমারা</p>
+        <p><span class="label">Home:</span> শালমরা</p>
         <div class="ad-container" id="ad2"></div>
       </div>`,
 
@@ -137,7 +136,7 @@
         <p><span class="label">E-mail:</span> N/A</p>
         <p><span class="label">Roll:</span> 34</p>
         <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগে</p>
+        <p><span class="label">ব্যবহার:</span> যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগায় </p>
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> কালিরহাট</p>
@@ -155,7 +154,7 @@
         <p><span class="label">ব্যবহার:</span> মনোযোগ দিয়ে বন্ধুর কথা শোনা, তাদের অনুভূতি বোঝার চেষ্টা করা।</p>
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> শালমারা</p>
+        <p><span class="label">Home:</span> শালমরা</p>
         <div class="ad-container" id="ad4"></div>
       </div>`,
 
@@ -206,29 +205,27 @@
 
     ];
 
-    // প্রতিবার আলাদা অবস্থানে দেখতে চাইলে এলোমেলো করুন (অথবা চাইলে কমেন্ট করে দেয়)
-    friends.sort(() => Math.random() - 0.5);
+    // এলোমেলো অবস্থায় দেখতে চাইলে uncomment করুন
+    // friends.sort(() => Math.random() - 0.5);
 
     const wrapper = document.getElementById('friends-wrapper');
-    wrapper.innerHTML = ''; // ক্লিয়ার আগে
+    wrapper.innerHTML = '';
 
     friends.forEach((friendHTML, index) => {
       wrapper.innerHTML += friendHTML;
     });
 
-    // প্রতিটি ad-container এর মধ্যে স্ক্রিপ্ট ও অ্যাডের div ডাইনামিক যুক্ত করা
+    // প্রতিটি ad-container এর মধ্যে script tag ও ad container div ডাইনামিক যোগ করা
     friends.forEach((_, index) => {
       const adContainer = document.getElementById("ad" + (index + 1));
       if (adContainer) {
-        adContainer.innerHTML = "";  // ক্লিয়ার পুরানো
+        adContainer.innerHTML = "";
 
-        // script tag তৈরি এবং যুক্ত করা
         const scriptTag = document.createElement("script");
         scriptTag.async = true;
         scriptTag.setAttribute("data-cfasync", "false");
         scriptTag.src = "//pl27285399.profitableratecpm.com/b47d06406ef73089aa71459855fb5e29/invoke.js";
 
-        // অ্যাড div তৈরি
         const adDiv = document.createElement("div");
         adDiv.id = "container-b47d06406ef73089aa71459855fb5e29";
 
