@@ -5,14 +5,12 @@
   <title>আমার বন্ধু</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
-
     body {
       font-family: 'Hind Siliguri', sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
       margin: 0;
     }
-
     .banner {
       text-align: center;
       background: linear-gradient(90deg, #6AB04A, #26de81);
@@ -25,18 +23,10 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: slideIn 1s ease-in-out;
     }
-
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     .footer {
       text-align: center;
       font-size: 16px;
@@ -44,7 +34,6 @@
       color: #888;
       padding: 10px;
     }
-
     .container {
       max-width: 600px;
       background-color: #fff;
@@ -53,26 +42,27 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     img {
       max-width: 100%;
       border-radius: 10px;
     }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
+    h2 { text-align: center; color: #333; }
     p {
       font-size: 18px;
       color: #555;
       margin-bottom: 8px;
     }
-
-    .label {
-      font-weight: bold;
-      color: #000;
+    .label { font-weight: bold; color: #000; }
+    /* মোবাইল ডিভাইসের জন্য */
+    @media (max-width: 700px) {
+      .container { padding: 12px; }
+      .banner { font-size: 22px; }
+      p { font-size: 15px; }
+    }
+    /* অ্যাড ডিভ, যেন প্যাড ও মার্জিন ঠিক থাকে */
+    .ad-container {
+      margin: 12px 0 8px 0;
+      text-align: center;
     }
   </style>
 </head>
@@ -87,6 +77,11 @@
   <script>
     const relations = ["হিরা", "মিম", "মুন্নি", "নিলা", "জান্নাতি", "মিম", "তানিয়া", "লিমা", "আসিয়া"];
     const randomRelation = relations[Math.floor(Math.random() * relations.length)];
+    // প্রতিবার ব্যবহার করার জন্য অ্যাড কোড
+    const adHTML = `<div class="ad-container">
+      <script async="async" data-cfasync="false" src="//pl27285399.profitableratecpm.com/b47d06406ef73089aa71459855fb5e29/invoke.js"></script>
+      <div id="container-b47d06406ef73089aa71459855fb5e29"></div>
+    </div>`;
 
     const friends = [
 
@@ -102,6 +97,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
+        ${adHTML}
       </div>`,
 
       `<div class="container">
@@ -116,6 +112,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> শালমারা</p>
+        ${adHTML}
       </div>`,
 
       `<div class="container">
@@ -130,6 +127,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> কালিরহাট</p>
+        ${adHTML}
       </div>`,
 
       `<div class="container">
@@ -144,6 +142,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> শালমারা</p>
+        ${adHTML}
       </div>`,
 
       `<div class="container">
@@ -158,6 +157,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> Bhelabari school and collage</p>
         <p><span class="label">Home:</span> Kalirhat</p>
+        ${adHTML}
       </div>`,
 
       `<div class="container">
@@ -172,6 +172,7 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
+        ${adHTML}
       </div>`,
       
       `<div class="container">
@@ -186,12 +187,12 @@
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
+        ${adHTML}
       </div>`
 
     ];
 
     friends.sort(() => Math.random() - 0.5);
-
     const wrapper = document.getElementById('friends-wrapper');
     friends.forEach(friend => {
       wrapper.innerHTML += friend;
@@ -200,6 +201,5 @@
 
   <!-- ✅ popunder ads -->
   <script type='text/javascript' src='//pl27285177.profitableratecpm.com/7f/03/96/7f0396209d930ae53bc1eb5338f64e88.js'></script>
-
 </body>
 </html>
