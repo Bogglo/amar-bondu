@@ -2,17 +2,29 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <title>আমার বন্ধু</title>
+  <title>আমার বন্ধু | বন্ধুদের তালিকা</title>
+  <!-- SEO Meta Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="আমার বন্ধু - ক্লাস ৮ এর বন্ধুদের তালিকা, ছবি, তথ্য ও স্কুল সম্পর্কে বিস্তারিত।" />
+  <meta name="keywords" content="আমার বন্ধু, বন্ধু তালিকা, স্কুল বন্ধু, ভেলাবাড়ী স্কুল এন্ড কলেজ , bhelabari school and college , bhelabari high school , ভেলাবাড়ী , ভেলাবাড়ী হাই স্কুল , Bhelabari school ,  ভেলাবাড়ী স্কুল, বন্ধুত্ব, বাংলা" />
+  <meta name="author" content="আল বাইজিদ" />
+  <meta property="og:title" content="আমার বন্ধু | বন্ধুদের তালিকা" />
+  <meta property="og:description" content="আমার বন্ধু - ক্লাস ৮ এর বন্ধুদের তালিকা, ছবি, তথ্য ও স্কুল সম্পর্কে বিস্তারিত।" />
+  <meta property="og:image" content="image/bayjid.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="bn_BD" />
+  <meta name="robots" content="index, follow" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
-
     body {
       font-family: 'Hind Siliguri', sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
       margin: 0;
     }
-
     .banner {
       text-align: center;
       background: linear-gradient(90deg, #6AB04A, #26de81);
@@ -25,18 +37,10 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: slideIn 1s ease-in-out;
     }
-
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px);}
+      to   { opacity: 1; transform: translateY(0);}
     }
-
     .footer {
       text-align: center;
       font-size: 16px;
@@ -44,7 +48,6 @@
       color: #888;
       padding: 10px;
     }
-
     .container {
       max-width: 600px;
       background-color: #fff;
@@ -54,56 +57,62 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       position: relative;
     }
-
     img {
       max-width: 100%;
       border-radius: 10px;
+      display: block;
+      margin: 0 auto 12px auto;
     }
-
     h2 {
       text-align: center;
       color: #333;
     }
-
     p {
       font-size: 18px;
       color: #555;
       margin-bottom: 8px;
     }
-
     .label {
       font-weight: bold;
       color: #000;
     }
-
     .ad-container {
       margin-top: 15px;
       text-align: center;
       clear: both;
       display: block;
     }
+    @media (max-width: 700px) {
+      .container { max-width: 98%; padding: 10px;}
+      .banner {font-size:22px; padding: 15px 5px;}
+      p {font-size: 16px;}
+    }
   </style>
 </head>
 <body>
-  <div class="banner">আমার বন্ধু</div>
-  <div id="friends-wrapper"></div>
-
-  <div class="footer">
-    &copy; 2025 - এই ওয়েবসাইট ডিজাইন ও কপিরাইট করেছেন: <strong>আল বাইজিদ</strong>
-  </div>
-
+  <header>
+    <div class="banner" aria-label="আমার বন্ধু">আমার বন্ধু</div>
+  </header>
+  <main>
+    <div id="friends-wrapper"></div>
+  </main>
+  <footer>
+    <div class="footer">
+      &copy; 2025 - এই ওয়েবসাইট ডিজাইন ও কপিরাইট করেছেন: <strong>আল বাইজিদ</strong>
+    </div>
+  </footer>
   <script>
+    // বাংলা নামের সম্ভাব্য রিলেশন
     const relations = ["হিরা", "মিম", "মুন্নি", "নিলা", "জান্নাতি", "মিম", "তানিয়া", "লিমা", "আসিয়া"];
     const randomRelation = relations[Math.floor(Math.random() * relations.length)];
 
     const friends = [
-
-      `<div class="container">
-        <h2>বন্ধু: সাজ্জাদ</h2>
-        <img src="image/sajjat.jpg" alt="Sajjat-এর ছবি" />
-        <p><span class="label">Name:</span> সাজ্জাদ</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> N/A</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: সাজ্জাদ</h2>
+        <img src="image/sajjat.jpg" alt="Sajjat-এর ছবি" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">সাজ্জাদ</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">N/A</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">N/A</span></p>
         <p><span class="label">Roll:</span> 2</p>
         <p><span class="label">Relation:</span> single</p>
         <p><span class="label">ব্যবহার:</span> যখন বন্ধুরা মন খারাপ করে, তখন পাশে থেকে সান্ত্বনা দেওয়া</p>
@@ -112,13 +121,12 @@
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
         <div class="ad-container" id="ad1"></div>
       </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: আল বাইজিদ </h2>
-        <img src="image/bayjid.jpg" alt="আল বাইজিদ" />
-        <p><span class="label">Name:</span> আল বাইজিদ</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> Allbayjidbishwash@gmail.com</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: আল বাইজিদ </h2>
+        <img src="image/bayjid.jpg" alt="আল বাইজিদ" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">আল বাইজিদ</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">N/A</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">Allbayjidbishwash@gmail.com</span></p>
         <p><span class="label">Roll:</span> 7</p>
         <p><span class="label">Relation:</span> ${randomRelation}</p>
         <p><span class="label">ব্যবহার:</span> শিক্ষার প্রতি আগ্রহ নতুন কিছু শেখার জন্য সবসময় আগ্রহী এবং অন্যদেরও শেখার জন্য অনুপ্রাণিত করে</p>
@@ -127,28 +135,26 @@
         <p><span class="label">Home:</span> শালমরা</p>
         <div class="ad-container" id="ad2"></div>
       </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: শহিদুল ইসলাম </h2>
-        <img src="image/sohidul.jpg" alt="শহিদুল ইসলাম" />
-        <p><span class="label">Name:</span> শহিদুল ইসলাম</p>
-        <p><span class="label">Phone:</span> +8801912398973</p>
-        <p><span class="label">E-mail:</span> N/A</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: শহিদুল ইসলাম </h2>
+        <img src="image/sohidul.jpg" alt="শহিদুল ইসলাম" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">শহিদুল ইসলাম</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">+8801912398973</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">N/A</span></p>
         <p><span class="label">Roll:</span> 34</p>
         <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগায় </p>
+        <p><span class="label">ব্যবহার:</span> যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগায়</p>
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
         <p><span class="label">Home:</span> কালিরহাট</p>
         <div class="ad-container" id="ad3"></div>
       </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: জাকির হোসেন </h2>
-        <img src="image/jakir.jpg" alt="জাকির হোসেন" />
-        <p><span class="label">Name:</span> জাকির হোসেন</p>
-        <p><span class="label">Phone:</span> +8801837165939</p>
-        <p><span class="label">E-mail:</span> N/A</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: জাকির হোসেন </h2>
+        <img src="image/jakir.jpg" alt="জাকির হোসেন" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">জাকির হোসেন</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">+8801837165939</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">N/A</span></p>
         <p><span class="label">Roll:</span> 31</p>
         <p><span class="label">Relation:</span> single</p>
         <p><span class="label">ব্যবহার:</span> মনোযোগ দিয়ে বন্ধুর কথা শোনা, তাদের অনুভূতি বোঝার চেষ্টা করা।</p>
@@ -157,28 +163,26 @@
         <p><span class="label">Home:</span> শালমরা</p>
         <div class="ad-container" id="ad4"></div>
       </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: সুজন মিয়া</h2>
-        <img src="image/sujon.jpg" alt="Sujon-এর ছবি" />
-        <p><span class="label">Name:</span> Sujon islam</p>
-        <p><span class="label">Phone:</span> +8801708787081 </p>
-        <p><span class="label">E-mail:</span> mdsujonislam085214@gmail.com</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: সুজন মিয়া</h2>
+        <img src="image/sujon.jpg" alt="Sujon-এর ছবি" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">Sujon islam</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">+8801708787081</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">mdsujonislam085214@gmail.com</span></p>
         <p><span class="label">Roll:</span> 29</p>
         <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> কঠিন মুহূর্তেও মাথা ঠাণ্ডা রাখে, বন্ধুরা তার পাশে স্বস্তিতে থাকে </p>
+        <p><span class="label">ব্যবহার:</span> কঠিন মুহূর্তেও মাথা ঠাণ্ডা রাখে, বন্ধুরা তার পাশে স্বস্তিতে থাকে</p>
         <p><span class="label">Class:</span> 8</p>
         <p><span class="label">School:</span> Bhelabari school and collage</p>
         <p><span class="label">Home:</span> Kalirhat</p>
         <div class="ad-container" id="ad5"></div>
       </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: ইয়াসিন ইসলাম </h2>
-        <img src="image/yasin.jpg" alt="ইয়াসিন ইসলাম" />
-        <p><span class="label">Name:</span> ইয়াসিন ইসলাম</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> N/A</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: ইয়াসিন ইসলাম </h2>
+        <img src="image/yasin.jpg" alt="ইয়াসিন ইসলাম" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">ইয়াসিন ইসলাম</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">N/A</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">N/A</span></p>
         <p><span class="label">Roll:</span> 22</p>
         <p><span class="label">Relation:</span> single</p>
         <p><span class="label">ব্যবহার:</span> অন্যদের সাহায্য করতে পছন্দ করে, বিপদের সময় পাশে থাকে</p>
@@ -187,13 +191,12 @@
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
         <div class="ad-container" id="ad6"></div>
       </div>`,
-      
-      `<div class="container">
-        <h2>বন্ধু: রাকিব হাসান</h2>
-        <img src="image/rakib.jpg" alt="রাকিব-এর ছবি" />
-        <p><span class="label">Name:</span> রাকিব হাসান</p>
-        <p><span class="label">Phone:</span> +8801887340578</p>
-        <p><span class="label">E-mail:</span> N/A</p>
+      `<div class="container" itemscope itemtype="http://schema.org/Person">
+        <h2 itemprop="name">বন্ধু: রাকিব হাসান</h2>
+        <img src="image/rakib.jpg" alt="রাকিব-এর ছবি" itemprop="image"/>
+        <p><span class="label">Name:</span> <span itemprop="name">রাকিব হাসান</span></p>
+        <p><span class="label">Phone:</span> <span itemprop="telephone">+8801887340578</span></p>
+        <p><span class="label">E-mail:</span> <span itemprop="email">N/A</span></p>
         <p><span class="label">Roll:</span> 12</p>
         <p><span class="label">Relation:</span> single</p>
         <p><span class="label">ব্যবহার:</span> অন্যদের কাজের প্রতি উৎসাহ দেয় এবং তাদের পাশে থাকে</p>
@@ -202,36 +205,37 @@
         <p><span class="label">Home:</span> ভেলাবাড়ী</p>
         <div class="ad-container" id="ad7"></div>
       </div>`
-
     ];
 
-    // এলোমেলো অবস্থায় দেখতে চাইলে uncomment করুন
+    // এলোমেলো অবস্থায় দেখতে চাইলে নিচের লাইন আনকমেন্ট করুন
     // friends.sort(() => Math.random() - 0.5);
 
     const wrapper = document.getElementById('friends-wrapper');
     wrapper.innerHTML = '';
 
-    friends.forEach((friendHTML, index) => {
+    friends.forEach(friendHTML => {
       wrapper.innerHTML += friendHTML;
     });
 
-    // প্রতিটি ad-container এর মধ্যে script tag ও ad container div ডাইনামিক যোগ করা
+    // প্রতিটি ad-container-এর মধ্যে script tag ও ad container div ডাইনামিক যোগ করা
     friends.forEach((_, index) => {
       const adContainer = document.getElementById("ad" + (index + 1));
       if (adContainer) {
         adContainer.innerHTML = "";
-
+        // এখানে আপনার এড কোড যুক্ত করুন (উদাহরণস্বরূপ, গুগল এডসেন্স বা অন্য কিছু)
+        // ডেমো purposes only, no ad script actually added
         const scriptTag = document.createElement("script");
         scriptTag.async = true;
         scriptTag.setAttribute("data-cfasync", "false");
+        // example ad container
         const adDiv = document.createElement("div");
         adDiv.id = "container-b47d06406ef73089aa71459855fb5e29";
-
+        adDiv.style.minHeight = "60px";
+        adDiv.innerHTML = "<!-- এখানে বিজ্ঞাপন আসবে -->";
         adContainer.appendChild(scriptTag);
         adContainer.appendChild(adDiv);
       }
     });
   </script>
-
 </body>
 </html>
