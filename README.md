@@ -3,7 +3,7 @@
 **This website was created to showcase information about my friends.**  
 It is designed using **HTML, CSS, and JavaScript**, and presented in the **Bengali language**.
 
-🔗 **View Live Website:** 👉 [Amar Bondu Live](https://bogglo.github.io/)
+🔗 **View Live Website:** 👉 [Amar Bondu Live](https://bogglo.github.io/amar-bondu/)
 
 ---
 
