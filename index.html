@@ -8,28 +8,24 @@
   <meta name="author" content="আল বাইজিদ" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:title" content="আমার বন্ধু" />
   <meta property="og:description" content="স্কুল জীবনের সেরা বন্ধুদের স্মৃতিচারণ ও তথ্য।" />
   <meta property="og:image" content="image/bayjid.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="আমার বন্ধু" />
   <meta property="og:locale" content="bn_BD" />
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="আমার বন্ধু" />
   <meta name="twitter:description" content="স্কুল জীবনের সেরা বন্ধুদের স্মৃতিচারণ ও তথ্য।" />
   <meta name="twitter:image" content="image/bayjid.jpg" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
-
     body {
       font-family: 'Hind Siliguri', sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
       margin: 0;
     }
-
     .banner {
       text-align: center;
       background: linear-gradient(90deg, #6AB04A, #26de81);
@@ -42,7 +38,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: slideIn 1s ease-in-out;
     }
-
     @keyframes slideIn {
       from {
         opacity: 0;
@@ -53,7 +48,6 @@
         transform: translateY(0);
       }
     }
-
     .footer {
       text-align: center;
       font-size: 16px;
@@ -61,7 +55,6 @@
       color: #888;
       padding: 10px;
     }
-
     .container {
       max-width: 600px;
       background-color: #fff;
@@ -70,151 +63,207 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       position: relative;
+      margin-bottom: 24px;
     }
-
     img {
       max-width: 100%;
       border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-
     h2 {
       text-align: center;
       color: #333;
     }
-
     p {
       font-size: 18px;
       color: #555;
       margin-bottom: 8px;
     }
-
     .label {
       font-weight: bold;
       color: #000;
+    }
+    .btn-swap {
+      display: block;
+      margin: 10px auto 0 auto;
+      padding: 10px 30px;
+      background: #26de81;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.13);
+      transition: background 0.2s;
+    }
+    .btn-swap:hover {
+      background: #27ae60;
     }
   </style>
 </head>
 <body>
   <div class="banner">আমার বন্ধু</div>
   <div id="friends-wrapper"></div>
-
   <div class="footer">
     &copy; 2025 - এই ওয়েবসাইট ডিজাইন ও কপিরাইট করেছেন: <strong>আল বাইজিদ</strong>
   </div>
-
   <script>
-    // বন্ধুর তালিকা
-    const relations = ["হিরা", "মিম", "মুন্নি", "নিলা", "জান্নাতি", "মিম", "তানিয়া", "লিমা", "আসিয়া"];
-    const randomRelation = relations[Math.floor(Math.random() * relations.length)];
-
+    // বন্ধুদের তথ্য
     const friends = [
-      `<div class="container">
-        <h2>বন্ধু: সাজ্জাদ</h2>
-        <img src="image/sajjat.jpg" alt="Sajjat-এর ছবি" />
-        <p><span class="label">Name:</span> সাজ্জাদ</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> N/A</p>
-        <p><span class="label">Roll:</span> 2</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> যখন বন্ধুরা মন খারাপ করে, তখন পাশে থেকে সান্ত্বনা দেওয়া</p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> ভেলাবাড়ী</p>
-      </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: আল বাইজিদ </h2>
-        <img src="image/bayjid.jpg" alt="আল বাইজিদ" />
-        <p><span class="label">Name:</span> আল বাইজিদ</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> Allbayjidbishwash@gmail.com</p>
-        <p><span class="label">Roll:</span> 7</p>
-        <p><span class="label">Relation:</span> ${randomRelation}</p>
-        <p><span class="label">ব্যবহার:</span> শিক্ষার প্রতি আগ্রহ নতুন কিছু শেখার জন্য সবসময় আগ্রহী এবং অন্যদেরও শেখার জন্য অনুপ্রাণিত করে</p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> শালমরা</p>
-      </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: শহিদুল ইসলাম </h2>
-        <img src="image/sohidul.jpg" alt="শহিদুল ইসলাম" />
-        <p><span class="label">Name:</span> শহিদুল ইসলাম</p>
-        <p><span class="label">Phone:</span> +8801912398973</p>
-        <p><span class="label">E-mail:</span> N/A</p>
-        <p><span class="label">Roll:</span> 34</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগায় </p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> কালিরহাট</p>
-      </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: জাকির হোসেন </h2>
-        <img src="image/jakir.jpg" alt="জাকির হোসেন" />
-        <p><span class="label">Name:</span> জাকির হোসেন</p>
-        <p><span class="label">Phone:</span> +8801837165939</p>
-        <p><span class="label">E-mail:</span> N/A</p>
-        <p><span class="label">Roll:</span> 31</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> মনোযোগ দিয়ে বন্ধুর কথা শোনা, তাদের অনুভূতি বোঝার চেষ্টা করা।</p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> শালমরা</p>
-      </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: সুজন মিয়া</h2>
-        <img src="image/sujon.jpg" alt="Sujon-এর ছবি" />
-        <p><span class="label">Name:</span> Sujon islam</p>
-        <p><span class="label">Phone:</span> +8801708787081 </p>
-        <p><span class="label">E-mail:</span> mdsujonislam085214@gmail.com</p>
-        <p><span class="label">Roll:</span> 29</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> কঠিন মুহূর্তেও মাথা ঠাণ্ডা রাখে, বন্ধুরা তার পাশে স্বস্তিতে থাকে </p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> Bhelabari school and collage</p>
-        <p><span class="label">Home:</span> Kalirhat</p>
-      </div>`,
-
-      `<div class="container">
-        <h2>বন্ধু: ইয়াসিন ইসলাম </h2>
-        <img src="image/yasin.jpg" alt="ইয়াসিন ইসলাম" />
-        <p><span class="label">Name:</span> ইয়াসিন ইসলাম</p>
-        <p><span class="label">Phone:</span> N/A</p>
-        <p><span class="label">E-mail:</span> N/A</p>
-        <p><span class="label">Roll:</span> 22</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> অন্যদের সাহায্য করতে পছন্দ করে, বিপদের সময় পাশে থাকে</p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> ভেলাবাড়ী</p>
-      </div>`,
-      
-      `<div class="container">
-        <h2>বন্ধু: রাকিব হাসান</h2>
-        <img src="image/rakib.jpg" alt="রাকিব-এর ছবি" />
-        <p><span class="label">Name:</span> রাকিব হাসান</p>
-        <p><span class="label">Phone:</span> +8801887340578</p>
-        <p><span class="label">E-mail:</span> N/A</p>
-        <p><span class="label">Roll:</span> 12</p>
-        <p><span class="label">Relation:</span> single</p>
-        <p><span class="label">ব্যবহার:</span> অন্যদের কাজের প্রতি উৎসাহ দেয় এবং তাদের পাশে থাকে</p>
-        <p><span class="label">Class:</span> 8</p>
-        <p><span class="label">School:</span> ভেলাবাড়ী স্কুল এন্ড কলেজ</p>
-        <p><span class="label">Home:</span> ভেলাবাড়ী</p>
-      </div>`
+      {
+        name: "সাজ্জাদ",
+        image: "image/sajjat.jpg",
+        phone: "N/A",
+        email: "N/A",
+        roll: "2",
+        relation: "single",
+        byabohar: "যখন বন্ধুরা মন খারাপ করে, তখন পাশে থেকে সান্ত্বনা দেওয়া",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "ভেলাবাড়ী"
+      },
+      {
+        name: "আল বাইজিদ",
+        image: "image/bayjid.jpg",
+        phone: "N/A",
+        email: "Allbayjidbishwash@gmail.com",
+        roll: "7",
+        relation: "হিরা",
+        byabohar: "শিক্ষার প্রতি আগ্রহ নতুন কিছু শেখার জন্য সবসময় আগ্রহী এবং অন্যদেরও শেখার জন্য অনুপ্রাণিত করে",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "শালমরা"
+      },
+      {
+        name: "শহিদুল ইসলাম",
+        image: "image/sohidul.jpg",
+        phone: "+8801912398973",
+        email: "N/A",
+        roll: "34",
+        relation: "single",
+        byabohar: "যেকোনো পরিবেশে হাসি ফুটিয়ে তোলে, সবাইকে ভালো লাগায়",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "কালিরহাট"
+      },
+      {
+        name: "জাকির হোসেন",
+        image: "image/jakir.jpg",
+        phone: "+8801837165939",
+        email: "N/A",
+        roll: "31",
+        relation: "single",
+        byabohar: "মনোযোগ দিয়ে বন্ধুর কথা শোনা, তাদের অনুভূতি বোঝার চেষ্টা করা।",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "শালমরা"
+      },
+      {
+        name: "Sujon islam",
+        image: "image/sujon.jpg",
+        phone: "+8801708787081",
+        email: "mdsujonislam085214@gmail.com",
+        roll: "29",
+        relation: "single",
+        byabohar: "কঠিন মুহূর্তেও মাথা ঠাণ্ডা রাখে, বন্ধুরা তার পাশে স্বস্তিতে থাকে",
+        class: "8",
+        school: "Bhelabari school and collage",
+        home: "Kalirhat"
+      },
+      {
+        name: "ইয়াসিন ইসলাম",
+        image: "image/yasin.jpg",
+        image2: "image/yasin2.jpg", // দ্বিতীয় ছবি
+        phone: "N/A",
+        email: "N/A",
+        roll: "22",
+        relation: "single",
+        byabohar: "অন্যদের সাহায্য করতে পছন্দ করে, বিপদের সময় পাশে থাকে",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "ভেলাবাড়ী"
+      },
+      {
+        name: "রাকিব হাসান",
+        image: "image/rakib.jpg",
+        phone: "+8801887340578",
+        email: "N/A",
+        roll: "12",
+        relation: "single",
+        byabohar: "অন্যদের কাজের প্রতি উৎসাহ দেয় এবং তাদের পাশে থাকে",
+        class: "8",
+        school: "ভেলাবাড়ী স্কুল এন্ড কলেজ",
+        home: "ভেলাবাড়ী"
+      }
     ];
 
-    // এলোমেলো অবস্থায় দেখতে চাইলে uncomment করুন
-    // friends.sort(() => Math.random() - 0.5);
+    // Render all friends
+    function renderFriends(arr) {
+      let html = '';
+      arr.forEach((friend, idx) => {
+        // শুধু ইয়াসিনের জন্য ইমেজ সুইচ বাটন
+        if(friend.name === "ইয়াসিন ইসলাম") {
+          html += `
+          <div class="container" data-index="${idx}">
+            <h2>বন্ধু: ${friend.name}</h2>
+            <img id="yasin-img" src="${friend.image}" alt="${friend.name}" />
+            <button class="btn-swap" id="swapBtn">পরের ছবি দেখুন</button>
+            <p><span class="label">Name:</span> ${friend.name}</p>
+            <p><span class="label">Phone:</span> ${friend.phone}</p>
+            <p><span class="label">E-mail:</span> ${friend.email}</p>
+            <p><span class="label">Roll:</span> ${friend.roll}</p>
+            <p><span class="label">Relation:</span> ${friend.relation}</p>
+            <p><span class="label">ব্যবহার:</span> ${friend.byabohar}</p>
+            <p><span class="label">Class:</span> ${friend.class}</p>
+            <p><span class="label">School:</span> ${friend.school}</p>
+            <p><span class="label">Home:</span> ${friend.home}</p>
+          </div>
+          `;
+        } else {
+          html += `
+          <div class="container" data-index="${idx}">
+            <h2>বন্ধু: ${friend.name}</h2>
+            <img src="${friend.image}" alt="${friend.name}" />
+            <p><span class="label">Name:</span> ${friend.name}</p>
+            <p><span class="label">Phone:</span> ${friend.phone}</p>
+            <p><span class="label">E-mail:</span> ${friend.email}</p>
+            <p><span class="label">Roll:</span> ${friend.roll}</p>
+            <p><span class="label">Relation:</span> ${friend.relation}</p>
+            <p><span class="label">ব্যবহার:</span> ${friend.byabohar}</p>
+            <p><span class="label">Class:</span> ${friend.class}</p>
+            <p><span class="label">School:</span> ${friend.school}</p>
+            <p><span class="label">Home:</span> ${friend.home}</p>
+          </div>
+          `;
+        }
+      });
+      document.getElementById('friends-wrapper').innerHTML = html;
+    }
 
-    const wrapper = document.getElementById('friends-wrapper');
-    wrapper.innerHTML = '';
+    // Initial render
+    renderFriends(friends);
 
-    friends.forEach((friendHTML) => {
-      wrapper.innerHTML += friendHTML;
+    // ইয়াসিনের বাটন ইভেন্ট
+    document.getElementById('friends-wrapper').addEventListener('click', function(e) {
+      if(e.target && e.target.id === "swapBtn") {
+        const yasinImg = document.getElementById('yasin-img');
+        const btn = e.target;
+        // চিহ্নিত রাখার জন্য data
+        if(!yasinImg.dataset.state || yasinImg.dataset.state === "first") {
+          yasinImg.src = friends.find(f=>f.name==="ইয়াসিন ইসলাম").image2;
+          yasinImg.dataset.state = "second";
+          btn.textContent = "আগের ছবি দেখুন";
+        } else {
+          yasinImg.src = friends.find(f=>f.name==="ইয়াসিন ইসলাম").image;
+          yasinImg.dataset.state = "first";
+          btn.textContent = "পরের ছবি দেখুন";
+        }
+      }
     });
   </script>
 </body>
