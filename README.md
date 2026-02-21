@@ -33,5 +33,5 @@ All **code, design, and content** in this project are **copyrighted** by _All Ba
 **I am Al Bayjid**, a curious and enthusiastic student currently studying in **Class 8**.  
 I am passionate about **programming**, especially learning **Python**, and I love showcasing my work on **GitHub**.
 
-📧 **Email:** allbayjidbishwash@gmail.com  
+📧 **Email:** allbayejidbishwash@protonmail.com
 🔗 **GitHub Repository:** [Amar Bondu](https://github.com/bogglo/Amar-bondu)
